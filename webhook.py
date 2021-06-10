@@ -1,11 +1,5 @@
-import requests
-import json
+import pymsteams
 
-webhook_url = 'https://webhook.site/f55820b3-6822-44fa-8a2d-c6702b5ccc64'
-
-data = {
-    'name': 'Eddy Guo',
-    'email': 'eddyyanruguo@gmail.com'
-}
-
-req = requests.post(webhook_url, data=json.dumps(data), headers={'Content-type': 'application/json'})
+myTeamsMessage = pymsteams.connectorcard("https://uniprint416.webhook.office.com/webhookb2/d0c07398-dcf1-4931-9670-8a77754a24c8@48315da9-d424-49b1-9de1-ff2a6125a9dc/IncomingWebhook/8f69ed0b8e5d457e827078796ea6d414/8eddf709-0926-4f76-8601-5ad1813dbde6")  # noqa: E501
+myTeamsMessage.text("this is my text")
+myTeamsMessage.send()
