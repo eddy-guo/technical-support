@@ -24,18 +24,6 @@ export default async (req, res) => {
         text: description,
       },
     ],
-    potentialAction: [
-      {
-        "@type": "OpenUri",
-        name: "Respond via Email",
-        targets: [
-          {
-            os: "default",
-            uri: `emailto:${email}`,
-          },
-        ],
-      },
-    ],
   };
 
   const response = await axios.post(WEBHOOK_URL, teamsMessage);
