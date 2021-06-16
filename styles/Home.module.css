@@ -1,0 +1,85 @@
+.form {
+  max-width: 550px;
+  padding: 25px;
+  border: 1px solid #eee;
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Header info */
+.form__header {
+  text-align: center;
+}
+
+.form__header > p {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Form main */
+.form__main {
+  text-align: left;
+}
+
+.form__main > div {
+  padding: 15px 0px;
+}
+
+.form__main > div > label {
+  display: block;
+  font-weight: bold;
+}
+
+.form__main > div > span {
+  display: block;
+  font-size: 14px;
+}
+
+.form__main > div > input {
+  height: 40px;
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form__main > div > textarea {
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Submission button */
+.form__main > button {
+  background-color: #06bcb2;
+  color: white;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 15px 0px;
+  border-radius: 5px;
+  transition: 50ms ease-in-out;
+  cursor: pointer;
+}
+
+.form__main > button:hover {
+  background-color: #04a59d;
+}
+
+.form__main > button:disabled {
+  cursor: not-allowed;
+}
+
+.form__main > button:hover:disabled {
+  background-color: #06bcb2;
+}
