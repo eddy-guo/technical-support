@@ -15,7 +15,7 @@ export default async (req, res) => {
     "@type": "MessageCard",
     "@context": "https://schema.org/extensions",
     summary: description,
-    themeColor: "",
+    themeColor: "10BFB5",
     title: "New Support Ticket",
     sections: [
       {
