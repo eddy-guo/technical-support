@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import axios from "axios";
 
 const WEBHOOK_URL =
@@ -19,6 +20,7 @@ export default async (req, res) => {
     sections: [
       {
         activityTitle: name,
+        activitySubtitle: dayjs().format("MMMM D, YYYY (HH:mm)"),
         text: description,
       },
     ],
@@ -29,7 +31,7 @@ export default async (req, res) => {
         targets: [
           {
             os: "default",
-            uri: `mailto:${email}`,
+            uri: `emailto:${email}`,
           },
         ],
       },
