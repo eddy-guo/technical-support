@@ -9,12 +9,12 @@ const transporter = nodemailer.createTransport({
 });
 
 export default async (req, res) => {
-  const { name, email, description } = req.params;
+  const { name, email, description } = req.body;
 
   const emailMessage = {
-    from: email,
+    from: "desertwafffle@gmail.com",
     to: "eddyguo89@gmail.com",
-    subject: `New support ticket from ${name}`,
+    subject: `New support ticket from ${name} (${email})`,
     text: description,
   };
 
