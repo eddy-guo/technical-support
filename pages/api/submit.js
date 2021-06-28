@@ -21,10 +21,16 @@ export default async (req, res) => {
       {
         activityTitle: name,
         activitySubtitle: dayjs().format("MMMM D, YYYY (HH:mm)"),
-        text: `${description}\n\n[Reply via Email](mailto:${email})`,
+        text: `${description}\n\n[Reply via Email](mailto:${email})\n\n`,
         markdown: true,
       },
     ],
+    potentialAction: [{
+      "@type": "HttpPOST",
+      name: "Forward Ticket via Email",
+      isPrimary: true,
+      "target": `http://localhost:3000/api/forward?name=${name}&email=${email}&description=${description}`
+    }]
   };
 
   const response = await axios.post(WEBHOOK_URL, teamsMessage);
