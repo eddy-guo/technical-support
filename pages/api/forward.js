@@ -15,7 +15,7 @@ export default async (req, res) => {
     from: "desertwafffle@gmail.com",
     to: "eddyguo89@gmail.com",
     subject: `New support ticket from ${name} (${email})`,
-    text: `URL Accessed: ${URLPath}\n\nTicket Description: ${description}`,
+    text: `URL Accessed: ${URLPath}\n\nTicket Description:\n\n${description}`,
   };
 
   try {

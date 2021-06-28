@@ -21,7 +21,7 @@ export default async (req, res) => {
       {
         activityTitle: name,
         activitySubtitle: dayjs().format("MMMM D, YYYY (HH:mm)"),
-        text: `${description}\n\nURL Accessed: ${URLPath}\n\n[Reply via Email](mailto:${email})`,
+        text: `URL Accessed: ${URLPath}\n\nTicket Description:\n\n${description}\n\n[Reply via Email](mailto:${email})`,
         markdown: true,
       },
     ],
@@ -30,6 +30,7 @@ export default async (req, res) => {
       name: "Forward Ticket via Email",
       isPrimary: true,
       "target": `https://technical-support.vercel.app/api/forward`,
+      // EDIT TARGET WHEN IMPLEMENTED INTO WEB APP
       body: JSON.stringify({ name, email, description, URLPath })
     }]
   };
