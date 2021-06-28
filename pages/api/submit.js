@@ -21,7 +21,7 @@ export default async (req, res) => {
       {
         activityTitle: name,
         activitySubtitle: dayjs().format("MMMM D, YYYY (HH:mm)"),
-        text: `URL Accessed: ${URLPath}\n\nTicket Description:\n\n${description}\n\n[Reply via Email](mailto:${email})`,
+        text: `URL Accessed: ${URLPath} \n\n Ticket Description: ${description} \n\n [Reply via Email](mailto:${email})`,
         markdown: true,
       },
     ],
