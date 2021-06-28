@@ -9,13 +9,13 @@ const transporter = nodemailer.createTransport({
 });
 
 export default async (req, res) => {
-  const { name, email, description } = req.body;
+  const { name, email, description, URLPath } = req.body;
 
   const emailMessage = {
     from: "desertwafffle@gmail.com",
     to: "eddyguo89@gmail.com",
     subject: `New support ticket from ${name} (${email})`,
-    text: description,
+    text: `URL Accessed: ${URLPath}\n\nTicket Description: ${description}`,
   };
 
   try {

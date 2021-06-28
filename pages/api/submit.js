@@ -5,7 +5,7 @@ const WEBHOOK_URL =
   "https://uniprint416.webhook.office.com/webhookb2/d0c07398-dcf1-4931-9670-8a77754a24c8@48315da9-d424-49b1-9de1-ff2a6125a9dc/IncomingWebhook/378afa82fb9c423d94ffb3cf1cdb40de/8eddf709-0926-4f76-8601-5ad1813dbde6";
 
 export default async (req, res) => {
-  const { name, email, description } = req.body;
+  const { name, email, description, URLPath } = req.body;
 
   if (!name || !email || !description) {
     res.status(502);
@@ -21,7 +21,7 @@ export default async (req, res) => {
       {
         activityTitle: name,
         activitySubtitle: dayjs().format("MMMM D, YYYY (HH:mm)"),
-        text: `${description}\n\n[Reply via Email](mailto:${email})\n\n`,
+        text: `${description}\n\nURL Accessed: ${URLPath}\n\n[Reply via Email](mailto:${email})`,
         markdown: true,
       },
     ],
@@ -30,7 +30,7 @@ export default async (req, res) => {
       name: "Forward Ticket via Email",
       isPrimary: true,
       "target": `https://technical-support.vercel.app/api/forward`,
-      body: JSON.stringify({ name, email, description })
+      body: JSON.stringify({ name, email, description, URLPath })
     }]
   };
 

@@ -1,15 +1,22 @@
 import axios from "axios";
 import Head from "next/head";
-import { useState } from "react";
 import { toast } from "react-toastify";
+import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import TextareaAutosize from "react-textarea-autosize";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [URLPath, setURLPath] = useState("");
   const [description, setDescription] = useState("");
   const [buttonLoading, setButtonLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setURLPath(window.location.href);
+    }
+  }, []);
 
   const submitRequest = async () => {
     setButtonLoading(true);
@@ -20,6 +27,7 @@ export default function Home() {
         name,
         email,
         description,
+        URLPath
       });
 
       // Successful
