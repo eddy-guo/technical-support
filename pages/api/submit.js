@@ -29,7 +29,7 @@ export default async (req, res) => {
       "@type": "HttpPOST",
       name: "Forward Ticket via Email",
       isPrimary: true,
-      "target": `http://localhost:3000/api/forward?name=${name}&email=${email}&description=${description}`
+      "target": `https://technical-support.vercel.app/api/forward?name=${name}&email=${email}&description=${description}`
     }]
   };
 
